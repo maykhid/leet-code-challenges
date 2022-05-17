@@ -30,9 +30,7 @@ List<int> twoSum(List<int> nums, int target) {
         firstNum = i;
         secondNum = j;
         break;
-      } else {
-        
-      }
+      } 
     }
     
   }
