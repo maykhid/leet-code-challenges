@@ -139,6 +139,8 @@ class Solution:
 
         
 # The solution below is based of the best solution for python  on leet code. Very succinct🥲
+# Apparently with how cumbersome my code was it faired well on leet code analytics with runtime speed 
+# of approx 60ms and memory usage of 14.2MB compared to this which was 55ms and mem. usage of 13.9MB
 def intToRoman( num):
     values = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ]
     numerals = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ]
