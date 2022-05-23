@@ -1,4 +1,3 @@
-import numpy as np
 import collections as cls
 
 class Solution:
@@ -14,6 +13,7 @@ class Solution:
                         sortedList = [nums[i], nums[j], nums[k]]
                         sortedList.sort()
                         possibleSum.append(sortedList)
+                        possibleSum.sort()
                         # print([nums[i], nums[j], nums[k]]) 
                     k = k + 1
                 j = j + 1
@@ -29,23 +29,14 @@ class Solution:
             # print(triplet)
         i = 0
         while i < len(possibleSum):
-            j = i + 1
-            while j < len(possibleSum):
+            j = len(possibleSum) - 1
+            while j != i:
                 if cls.Counter(possibleSum[i]) == cls.Counter(possibleSum[j]):
                     print(possibleSum[j])
                     del possibleSum[j]
-                j = j + 1
+                j = j - 1
             i = i + 1
         return possibleSum
 
-# def equals(list: list, list2: list) -> bool:
-#     for i in list2:
-#         val = list.__contains__(i)
-#     return list.__contains__(i)
 
-# print(equals([1, 2, 3, 3], [1, 2, 3, 2]))
-
-print(Solution.threeSum(Solution, [0, 0, 0, 0]))
-
-# for i, x in enumerate([-1,0,1,2,-1,-4]):
-#     print(i)
+print(Solution.threeSum(Solution, [-1,0,1,2,-1,-4, -5, 5, -3, 6]))

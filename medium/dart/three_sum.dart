@@ -46,8 +46,9 @@ class Solution {
     }
   
     // at this point i remove duplicates
+    // i starts from index 0 while j starts from the last index of the list
     for(int i = 0; i < possibleSum.length; i++) {
-      for(int j = i + 1; j < possibleSum.length; j++) {
+      for(int j = possibleSum.length - 1; j != i; j--) {
          if (possibleSum[i].equals(possibleSum[j])) {
           possibleSum.removeAt(j);
         } 
@@ -66,6 +67,5 @@ extension on List {
 }
 
 void main() {
-  // print([1, 0, 1].equals([0, 1, 1]));
-  print(Solution().threeSum([0, 0, 0, 0]));
+  print(Solution().threeSum([-1,0,1,2,-1,-4]));
 }
