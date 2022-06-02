@@ -1,0 +1,11 @@
+About (:)
+
+: is the delimiter of the slice syntax to 'slice out' sub-parts in sequences , [start:end]
+
+[1:5] is equivalent to "from 1 to 5" (5 not included)
+[1:] is equivalent to "1 to end"
+[len(a):] is equivalent to "from length of a to end"
+[::-1] reverse from the last
+[0::2] show from the first skip one and show the next
+[::2] equivalent to the one directly above
+[::-2] reverse from the last but skip one
