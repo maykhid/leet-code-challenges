@@ -26,4 +26,31 @@ class Solution:
                 j += 1
             i += 1
 
-print(Solution.twoSum(Solution, [2,7,11,15], 9))            
+print(Solution.twoSum(Solution, [2,7,11,15], 9))          
+
+# /**
+#  * The optimzed solution works as follows:
+#  * instead of using two pointers to check each sum of the nums starting from the first index
+#  * we can use map to store elements and their indexes while looping through nums
+#  * e.g for nums = [2, 7. 11, 14], target = 9. At index 0 which is 2, the complement is the number you add to 2 to give 9, which is 7.
+#  * So check if key 7 is in the map, if not add 2 : 0, to the map. 
+#  * Continue looping from index 1 which is 7 the complement is 2. check if the complent 2 can be found in the map. yes it exists!
+#  * So we return the index of 2 and index of 7 in a list -> [0, 1]. if we did not find shit we return an empty list
+#  * 
+#  */
+
+def two_sum_optimised(nums: list[int], target: int) -> list:
+    _map = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        value = _map.get(complement) #{7:2}
+        
+        if value is not None:
+            # _map[nums[i]] = i
+            print(_map)
+            return [value, i]
+        _map[nums[i]] = i
+    return []
+
+         
+
