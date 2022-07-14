@@ -26,7 +26,7 @@ class Solution:
                 j += 1
             i += 1
 
-print(Solution.twoSum(Solution, [2,7,11,15], 9))          
+# print(Solution.twoSum(Solution, [2,7,11,15], 9))          
 
 # /**
 #  * The optimzed solution works as follows:
@@ -42,15 +42,14 @@ print(Solution.twoSum(Solution, [2,7,11,15], 9))
 def two_sum_optimised(nums: list[int], target: int) -> list:
     _map = {}
     for i in range(len(nums)):
-        complement = target - nums[i]
-        value = _map.get(complement) #{7:2}
-        
-        if value is not None:
-            # _map[nums[i]] = i
-            print(_map)
-            return [value, i]
-        _map[nums[i]] = i
+        complement = target - nums[i] # gets complement of a number
+        value = _map.get(complement) # try to get the value of the complement e.g {2:0} -> 2 is complement, 1 is value
+        if value is not None: # if value exists (which means complement exists)
+            return [value, i] # return the value of the found complement and the current index of the element we're on
+        _map[nums[i]] = i # else add the key (complement) and its value (index)
     return []
+
+print(two_sum_optimised([2,7,11,15], 9))
 
          
 
